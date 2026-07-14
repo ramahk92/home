@@ -1587,6 +1587,11 @@
             </div>
             <div class="contact-form-wrapper reveal">
                 <form id="contactForm" novalidate>
+                    <!-- Web3Forms access key — replace YOUR_ACCESS_KEY with the key from https://web3forms.com -->
+                    <input type="hidden" name="access_key" value="d1fccd4a-0b8f-482e-9bd9-e7a13ac91cad">
+                    <input type="hidden" name="subject" value="New Contact Form Submission — Prof. Ram Kumar">
+                    <input type="hidden" name="from_name" value="Prof. Ram Kumar Portfolio">
+                    <input type="checkbox" name="botcheck" style="display:none">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="cf-name">Full Name <span style="color:var(--accent)">*</span></label>
@@ -1708,10 +1713,12 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Contact form handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Contact form handler — Web3Forms
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const status = document.getElementById('formStatus');
+            const btn = this.querySelector('.btn-submit');
+
             const name = document.getElementById('cf-name').value.trim();
             const email = document.getElementById('cf-email').value.trim();
             const subject = document.getElementById('cf-subject').value;
@@ -1730,14 +1737,35 @@
                 return;
             }
 
-            // Build mailto link as fallback
-            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-            const mailtoLink = 'mailto:ramahk92@geckhagaria.org.in?subject=' + encodeURIComponent(subject) + '&body=' + body;
-            window.location.href = mailtoLink;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+            status.className = 'form-status';
 
-            status.className = 'form-status success';
-            status.textContent = 'Thank you! Your email client has been opened with your message.';
-            this.reset();
+            try {
+                const formData = new FormData(this);
+                // Override the subject with the selected inquiry type
+                formData.set('subject', 'New Contact [' + subject + '] — Prof. Ram Kumar');
+
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    status.className = 'form-status success';
+                    status.textContent = 'Thank you, ' + name + '! Your message has been sent successfully.';
+                    this.reset();
+                } else {
+                    throw new Error(data.message || 'Submission failed.');
+                }
+            } catch (err) {
+                status.className = 'form-status error';
+                status.textContent = 'Something went wrong. Please email directly at ramahk92@geckhagaria.org.in';
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            }
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
