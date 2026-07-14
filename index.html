@@ -29,7 +29,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
@@ -42,12 +41,10 @@
 
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; }
 
-        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--primary); }
         ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
 
-        /* Container */
         .container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 
         /* ========== HEADER ========== */
@@ -56,7 +53,6 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
             overflow: hidden;
             background: var(--primary);
         }
@@ -85,7 +81,7 @@
         .header-content {
             position: relative;
             z-index: 2;
-            text-align: center;
+            width: 100%;
             padding: 40px 20px;
             animation: fadeUp 1s ease-out;
         }
@@ -95,15 +91,36 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* ===== SPLIT HERO LAYOUT ===== */
+        .hero-split {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .hero-left {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-right {
+            flex: 1 1 400px;
+            min-width: 300px;
+        }
+
         .profile-wrapper {
             position: relative;
             display: inline-block;
-            margin-bottom: 32px;
         }
 
         .profile-ring {
             position: absolute;
-            inset: -8px;
+            inset: -10px;
             border-radius: 50%;
             background: var(--accent-grad);
             opacity: 0.6;
@@ -116,13 +133,13 @@
         }
 
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid rgba(255,255,255,0.1);
+            border: 4px solid rgba(255,255,255,0.1);
             position: relative;
-            box-shadow: 0 0 40px rgba(59,130,246,0.2);
+            box-shadow: 0 0 50px rgba(59,130,246,0.25);
         }
 
         .profile-image img {
@@ -169,27 +186,26 @@
             color: var(--text-muted);
             font-size: 1rem;
             max-width: 500px;
-            margin: 0 auto 32px;
+            margin-bottom: 32px;
             line-height: 1.6;
         }
 
         .header-stats {
             display: flex;
-            justify-content: center;
-            gap: 40px;
+            gap: 32px;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
 
         .header-stat {
-            text-align: center;
+            text-align: left;
         }
 
         .header-stat .num {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--text);
             display: block;
+            line-height: 1;
         }
 
         .header-stat .label {
@@ -957,6 +973,17 @@
             .cards-container { grid-template-columns: 1fr; }
             .research-stats { grid-template-columns: repeat(2, 1fr); }
 
+            /* Hero split on mobile */
+            .hero-split {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+            .hero-right { text-align: center; }
+            .header-stats { justify-content: center; }
+            .header-stat { text-align: center; }
+            .profile-image { width: 200px; height: 200px; }
+
             .timeline::before { left: 20px; }
             .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; text-align: left; }
             .timeline-item:nth-child(even) { margin-left: 0; padding-left: 50px; text-align: left; }
@@ -1025,40 +1052,48 @@
         <div class="header-bg"></div>
         <div class="header-grid"></div>
         <div class="header-content">
-            <div class="profile-wrapper">
-                <div class="profile-ring"></div>
-                <div class="profile-image">
-                    <img src="https://www.geckhagaria.org.in/wp-content/uploads/sites/12/2023/10/file_653f49f608295.jpg" alt="Mr. Ram Kumar">
+            <div class="hero-split">
+                <!-- Left: Photo -->
+                <div class="hero-left">
+                    <div class="profile-wrapper">
+                        <div class="profile-ring"></div>
+                        <div class="profile-image">
+                            <img src="https://www.geckhagaria.org.in/wp-content/uploads/sites/12/2023/10/file_653f49f608295.jpg" alt="Mr. Ram Kumar">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="header-badge">
-                <i class="fas fa-graduation-cap"></i>
-                Assistant Professor
-            </div>
-            <div class="header-text">
-                <h1>Mr. Ram Kumar</h1>
-                <h2>Electrical Engineering</h2>
-                <div class="institution">
-                    Department of Electrical Engineering<br>
-                    Government Engineering College, Khagaria, Bihar
-                </div>
-            </div>
-            <div class="header-stats">
-                <div class="header-stat">
-                    <span class="num">25</span>
-                    <span class="label">Publications</span>
-                </div>
-                <div class="header-stat">
-                    <span class="num">150+</span>
-                    <span class="label">Citations</span>
-                </div>
-                <div class="header-stat">
-                    <span class="num">5+</span>
-                    <span class="label">Years Exp.</span>
-                </div>
-                <div class="header-stat">
-                    <span class="num">Ph.D.</span>
-                    <span class="label">Pursuing</span>
+                <!-- Right: Details -->
+                <div class="hero-right">
+                    <div class="header-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        Assistant Professor
+                    </div>
+                    <div class="header-text">
+                        <h1>Mr. Ram Kumar</h1>
+                        <h2>Electrical Engineering</h2>
+                        <div class="institution">
+                            Department of Electrical Engineering<br>
+                            Government Engineering College, Khagaria, Bihar
+                        </div>
+                    </div>
+                    <div class="header-stats">
+                        <div class="header-stat">
+                            <span class="num">25</span>
+                            <span class="label">Publications</span>
+                        </div>
+                        <div class="header-stat">
+                            <span class="num">150+</span>
+                            <span class="label">Citations</span>
+                        </div>
+                        <div class="header-stat">
+                            <span class="num">5+</span>
+                            <span class="label">Years Exp.</span>
+                        </div>
+                        <div class="header-stat">
+                            <span class="num">Ph.D.</span>
+                            <span class="label">Pursuing</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1440,7 +1475,6 @@
     </footer>
 
     <script>
-        // Navbar visibility on scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > window.innerHeight * 0.6) {
@@ -1450,7 +1484,6 @@
             }
         });
 
-        // Mobile menu toggle
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('open');
         }
@@ -1458,7 +1491,6 @@
             document.getElementById('navLinks').classList.remove('open');
         }
 
-        // Active nav link on scroll
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -1478,7 +1510,6 @@
             });
         });
 
-        // Scroll reveal animation
         const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1490,7 +1521,6 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
