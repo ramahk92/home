@@ -1017,6 +1017,119 @@
             .nav-logo { display: block; }
         }
 
+        /* ========== CONTACT FORM ========== */
+        #contact { background: var(--primary); }
+
+        .contact-form-wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full { grid-column: 1 / -1; }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            outline: none;
+            width: 100%;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-dim);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 140px; }
+
+        .form-group select option { background: var(--secondary); }
+
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-grad);
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59,130,246,0.4);
+        }
+
+        .btn-submit:active { transform: translateY(0); }
+
+        .form-status {
+            display: none;
+            margin-top: 20px;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .form-status.success {
+            display: block;
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            color: #4ade80;
+        }
+
+        .form-status.error {
+            display: block;
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            color: #f87171;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: 1; }
+        }
+
         @media (max-width: 480px) {
             .header-stats { gap: 24px; }
             .header-stat .num { font-size: 1.4rem; }
@@ -1043,6 +1156,7 @@
                 <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
                 <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
                 <li><a href="#additional" onclick="closeMenu()">Activities</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -1463,6 +1577,53 @@
         </div>
     </section>
 
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle">Have a question, collaboration idea, or research inquiry? Feel free to reach out.</p>
+            </div>
+            <div class="contact-form-wrapper reveal">
+                <form id="contactForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="cf-name">Full Name <span style="color:var(--accent)">*</span></label>
+                            <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-email">Email Address <span style="color:var(--accent)">*</span></label>
+                            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-phone">Phone Number</label>
+                            <input type="tel" id="cf-phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-subject">Subject <span style="color:var(--accent)">*</span></label>
+                            <select id="cf-subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="research">Research Collaboration</option>
+                                <option value="academic">Academic Inquiry</option>
+                                <option value="project">Project Guidance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label for="cf-message">Message <span style="color:var(--accent)">*</span></label>
+                            <textarea id="cf-message" name="message" placeholder="Write your message here…" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1546,6 +1707,38 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Contact form handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const status = document.getElementById('formStatus');
+            const name = document.getElementById('cf-name').value.trim();
+            const email = document.getElementById('cf-email').value.trim();
+            const subject = document.getElementById('cf-subject').value;
+            const message = document.getElementById('cf-message').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                status.className = 'form-status error';
+                status.textContent = 'Please fill in all required fields.';
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                status.className = 'form-status error';
+                status.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            // Build mailto link as fallback
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+            const mailtoLink = 'mailto:ramahk92@geckhagaria.org.in?subject=' + encodeURIComponent(subject) + '&body=' + body;
+            window.location.href = mailtoLink;
+
+            status.className = 'form-status success';
+            status.textContent = 'Thank you! Your email client has been opened with your message.';
+            this.reset();
+        });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
