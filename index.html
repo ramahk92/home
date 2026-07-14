@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Ram Kumar — Assistant Professor | Electrical Engineering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-dark: #1d4ed8;
+            --accent-grad: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --bg: #0f172a;
+            --card: #1e293b;
+            --card-hover: #334155;
+            --border: rgba(255,255,255,0.08);
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+            --shadow-lg: 0 12px 48px rgba(0,0,0,0.5);
+            --radius: 16px;
+            --radius-sm: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+        /* Container */
+        .container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        /* ========== HEADER ========== */
+        header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--primary);
+        }
+
+        .header-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(59,130,246,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(59,130,246,0.08) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .header-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 1;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+
+        .profile-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            background: var(--accent-grad);
+            opacity: 0.6;
+            animation: pulse-ring 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.05); opacity: 0.3; }
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.1);
+            position: relative;
+            box-shadow: 0 0 40px rgba(59,130,246,0.2);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .profile-image:hover img { transform: scale(1.05); }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.3);
+            color: var(--accent-light);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-text h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .header-text h2 {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            color: var(--accent-light);
+            margin-bottom: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .institution {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .header-stat {
+            text-align: center;
+        }
+
+        .header-stat .num {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+            display: block;
+        }
+
+        .header-stat .label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .scroll-indicator i {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(-20px);
+            pointer-events: none;
+        }
+
+        nav.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* ========== SECTIONS ========== */
+        section { padding: 100px 0; position: relative; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(59,130,246,0.1);
+            color: var(--accent-light);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+
+        /* ========== ABOUT ========== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .about-text p:first-child::first-letter {
+            font-size: 3.5rem;
+            float: left;
+            line-height: 1;
+            padding-right: 12px;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .contact-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 18px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-top: 3px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: var(--transition);
+            word-break: break-all;
+        }
+
+        .contact-item a:hover { color: var(--text); text-decoration: underline; }
+
+        /* ========== SUBJECTS ========== */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .subject-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 32px 28px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-grad);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59,130,246,0.3);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .subject-card:hover::before { transform: scaleX(1); }
+
+        .subject-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59,130,246,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+
+        .subject-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .subject-card p {
+            color: var(--text-dim);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        /* ========== RESEARCH ========== */
+        .research-hero {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .research-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .stat-box {
+            padding: 24px;
+            background: rgba(255,255,255,0.03);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--accent-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .interests-section {
+            margin: 48px 0;
+        }
+
+        .interests-section h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .interest-tag {
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.2);
+            color: var(--accent-light);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .interest-tag:hover {
+            background: rgba(59,130,246,0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Publications */
+        .pub-section { margin-top: 60px; }
+
+        .pub-section h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 32px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .pub-list { list-style: none; }
+
+        .pub-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pub-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent-grad);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .pub-item:hover {
+            border-color: rgba(59,130,246,0.2);
+            transform: translateX(4px);
+        }
+
+        .pub-item:hover::before { opacity: 1; }
+
+        .pub-item li { list-style: none; }
+
+        .pub-item strong { color: var(--text); }
+
+        .pub-item em { color: var(--accent-light); font-style: normal; }
+
+        .pub-item a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+
+        .pub-item a:hover { text-decoration: underline; }
+
+        /* ========== PROJECTS ========== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .project-card:hover {
+            border-color: rgba(59,130,246,0.3);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .project-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            line-height: 1.4;
+            flex: 1;
+            padding-right: 16px;
+        }
+
+        .project-year {
+            background: rgba(59,130,246,0.1);
+            color: var(--accent-light);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        .project-meta i { color: var(--accent); font-size: 0.8rem; }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .project-award {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(234,179,8,0.1);
+            color: #eab308;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 16px;
+        }
+
+        /* ========== EXPERIENCE ========== */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 0 40px 60px 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding: 0 0 60px 40px;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            right: -8px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.3);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot { right: auto; left: -8px; }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--accent-grad);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .timeline-content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            border-color: rgba(59,130,246,0.3);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .timeline-content .org {
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========== ADDITIONAL ========== */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59,130,246,0.3);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent-grad);
+            opacity: 0.9;
+        }
+
+        .card-icon i { position: relative; z-index: 1; }
+
+        .card-content {
+            padding: 28px;
+        }
+
+        .card-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--secondary);
+            border-top: 1px solid var(--border);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .footer-title {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        .academic-profiles {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .profile-link {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent-grad);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .profile-link:hover {
+            color: white;
+            border-color: transparent;
+            transform: translateY(-4px);
+        }
+
+        .profile-link:hover::before { opacity: 1; }
+
+        .profile-link i { position: relative; z-index: 1; }
+
+        .copyright {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .copyright p { margin-bottom: 6px; }
+
+        /* ========== ANIMATIONS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .subjects-grid { grid-template-columns: repeat(2, 1fr); }
+            .cards-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .subjects-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .cards-container { grid-template-columns: 1fr; }
+            .research-stats { grid-template-columns: repeat(2, 1fr); }
+
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; text-align: left; }
+            .timeline-item:nth-child(even) { margin-left: 0; padding-left: 50px; text-align: left; }
+            .timeline-dot { right: auto; left: 12px !important; }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: var(--secondary);
+                flex-direction: column;
+                padding: 20px;
+                gap: 4px;
+                border-bottom: 1px solid var(--border);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: var(--transition);
+            }
+
+            .nav-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .nav-links a { padding: 12px 16px; width: 100%; }
+            .nav-links a.active::after { display: none; }
+            .mobile-menu-btn { display: block; }
+            .nav-logo { display: block; }
+        }
+
+        @media (max-width: 480px) {
+            .header-stats { gap: 24px; }
+            .header-stat .num { font-size: 1.4rem; }
+            .profile-image { width: 160px; height: 160px; }
+            .research-hero { padding: 32px 20px; }
+            .stat-number { font-size: 2rem; }
+            .project-card { padding: 24px; }
+            .contact-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">R.K.</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#subjects" onclick="closeMenu()">Subjects</a></li>
+                <li><a href="#research" onclick="closeMenu()">Research</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="#additional" onclick="closeMenu()">Activities</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <div class="header-bg"></div>
+        <div class="header-grid"></div>
+        <div class="header-content">
+            <div class="profile-wrapper">
+                <div class="profile-ring"></div>
+                <div class="profile-image">
+                    <img src="https://www.geckhagaria.org.in/wp-content/uploads/sites/12/2023/10/file_653f49f608295.jpg" alt="Mr. Ram Kumar">
+                </div>
+            </div>
+            <div class="header-badge">
+                <i class="fas fa-graduation-cap"></i>
+                Assistant Professor
+            </div>
+            <div class="header-text">
+                <h1>Mr. Ram Kumar</h1>
+                <h2>Electrical Engineering</h2>
+                <div class="institution">
+                    Department of Electrical Engineering<br>
+                    Government Engineering College, Khagaria, Bihar
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="header-stat">
+                    <span class="num">25</span>
+                    <span class="label">Publications</span>
+                </div>
+                <div class="header-stat">
+                    <span class="num">150+</span>
+                    <span class="label">Citations</span>
+                </div>
+                <div class="header-stat">
+                    <span class="num">5+</span>
+                    <span class="label">Years Exp.</span>
+                </div>
+                <div class="header-stat">
+                    <span class="num">Ph.D.</span>
+                    <span class="label">Pursuing</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Professional Profile</h2>
+                <p class="section-subtitle">Dedicated academic and researcher in Electrical Engineering with expertise in control systems and power engineering.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I am a dedicated professional currently serving as an Assistant Professor in the Department of Electrical Engineering at the Government Engineering College, Khagaria, located in Raun, Alauli, Bihar, India. With over 5 years of academic experience, I am passionate about teaching, research, and guiding the next generation of engineers.</p>
+                    <p>I completed M.Tech in Control and Instrumentation from Dr. B. R. Ambedkar National Institute of Technology, Jalandhar, Punjab, India. I am currently pursuing a Ph.D. (part-time) in the Department of Instrumentation and Control Engineering at the National Institute of Technology Tiruchirappalli, Tamil Nadu, India. I believe in creating an engaging learning environment that combines theoretical knowledge with practical applications.</p>
+                    <p>My professional journey has encompassed diverse areas within Power System and Control Engineering, reflecting my versatile skill set and broad expertise. My areas of interest span control theory and applications, circuit design, model order reduction, optimization, robotics, renewable energy, and control of lower extremity exoskeletons. Throughout my career, I have been actively involved in various research projects funded by the Government of India, CSIR, and SERB.</p>
+                    <p>I have published over 20 research articles in reputable national and international journals and conferences. In addition to my research contributions, I serve as an editor for the Journal of Control Science and Engineering (CSE) published by the Science Publishing Group.</p>
+                </div>
+                <div class="contact-card reveal">
+                    <h3><i class="fas fa-address-card" style="margin-right: 10px; color: var(--accent);"></i>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:ramahk92@geckhagaria.org.in">ramahk92@geckhagaria.org.in</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9108642983</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-building"></i>
+                        <span>Dept. of Electrical Engineering, 2nd Floor, Room 214</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span><a href="https://www.geckhagaria.org.in/faculty/ram-kumar/" target="_blank">Faculty Profile</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span><a href="https://scholarprofiles.com/ramkumar" target="_blank">Scholar Profile</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects -->
+    <section id="subjects" style="background: var(--secondary);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Teaching</span>
+                <h2 class="section-title">Subjects Taught</h2>
+                <p class="section-subtitle">Undergraduate courses combining theoretical foundations with practical applications.</p>
+            </div>
+            <div class="subjects-grid">
+                <div class="subject-card reveal">
+                    <div class="subject-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Power Systems Engineering</h3>
+                    <p>Comprehensive study of generation, transmission, and distribution systems, including load flow analysis and stability concepts.</p>
+                </div>
+                <div class="subject-card reveal">
+                    <div class="subject-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Renewable Energy Systems</h3>
+                    <p>Design and analysis of solar, wind, and hybrid renewable energy systems with grid integration challenges.</p>
+                </div>
+                <div class="subject-card reveal">
+                    <div class="subject-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3>Control Systems Engineering</h3>
+                    <p>Analysis and design of feedback control systems with applications in electrical engineering domains.</p>
+                </div>
+                <div class="subject-card reveal">
+                    <div class="subject-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Electrical Machines</h3>
+                    <p>Principles, operation, and performance characteristics of transformers, DC and AC machines.</p>
+                </div>
+                <div class="subject-card reveal">
+                    <div class="subject-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Power Electronics</h3>
+                    <p>Study of power semiconductor devices, converters, inverters, and their applications in power systems.</p>
+                </div>
+                <div class="subject-card reveal">
+                    <div class="subject-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Smart Grid Technologies</h3>
+                    <p>Advanced concepts in modern grid infrastructure, including IoT applications, smart metering, and grid automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Research</span>
+                <h2 class="section-title">Research Profile</h2>
+                <p class="section-subtitle">Contributions to control systems, model order reduction, and power system engineering.</p>
+            </div>
+
+            <div class="research-hero reveal">
+                <div class="research-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">25</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Citations</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">B.Tech Projects</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Patents</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interests-section reveal">
+                <h3>Research Interests</h3>
+                <div class="research-interests">
+                    <span class="interest-tag">Lower Limb Exoskeleton</span>
+                    <span class="interest-tag">Model Order Reduction</span>
+                    <span class="interest-tag">Solar Parameters Estimation</span>
+                    <span class="interest-tag">Load Frequency Control</span>
+                    <span class="interest-tag">Microgrid Control Systems</span>
+                    <span class="interest-tag">Renewable Energy</span>
+                </div>
+            </div>
+
+            <div class="pub-section reveal">
+                <h3>International Journal Publications</h3>
+                <ul class="pub-list">
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and Afzal Sikander. Parameter identification for load frequency control using fuzzy FOPID in power system. <em>COMPEL</em>, Vol. 40 No. 4, pp. 802–821 (2021). <a href="https://doi.org/10.1108/COMPEL-04-2020-0159" target="_blank">doi:10.1108/COMPEL-04-2020-0159</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and Afzal Sikander. Order Reduction based on Coulomb's and Franklin's laws Algorithm (2021).
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and D. Ezhilarasi. A state-of-the-art survey of model order reduction techniques for large-scale coupled dynamical systems. <em>Int. J. of Dynamics and Control</em>, Vol. 11 No. 2, pp. 900–916 (2023). <a href="https://doi.org/10.1007/s40435-022-00985-7" target="_blank">doi:10.1007/s40435-022-00985-7</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and Afzal Sikander. A novel load frequency control of multi area non-reheated thermal power plant using fuzzy PID cascade controller. <em>Sādhanā</em>, Vol. 48, Article 25 (2023). <a href="https://doi.org/10.1007/s12046-022-02071-2" target="_blank">doi:10.1007/s12046-022-02071-2</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and Afzal Sikander. A new order abatement method based on Atom search optimization. <em>Int. J. of Dynamics and Control</em>, Vol. 11 No. 4, pp. 1704–1717 (2023). <a href="https://doi.org/10.1007/s40435-022-01094-1" target="_blank">doi:10.1007/s40435-022-01094-1</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and Afzal Sikander. Review and analysis of model order reduction techniques for high-dimensional complex systems. <em>Microsystem Technologies</em>, Vol. 30 No. 9, pp. 1177–1190 (2024). <a href="https://doi.org/10.1007/s00542-023-05605-8" target="_blank">doi:10.1007/s00542-023-05605-8</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and Afzal Sikander. A new hybrid approach based on fuzzy logic and optimization for load frequency control. <em>Int. J. of Modelling and Simulation</em>, Vol. 45 No. 6, pp. 2062–2071 (2025). <a href="https://doi.org/10.1080/02286203.2024.2315327" target="_blank">doi:10.1080/02286203.2024.2315327</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and Afzal Sikander. Development of new framework for order abatement and control design strategy. <em>Proc. IMechE, Part I</em>, Vol. 239 No. 2, pp. 303–314 (2025). <a href="https://doi.org/10.1177/09596518241271853" target="_blank">doi:10.1177/09596518241271853</a>
+                    </li>
+                    <li class="pub-item">
+                        Priyajit Dash, <strong>Ram Kumar</strong>, Sunil Sharma and Balaji Prasad Padhi. Order reduction of Large Scale LTI Systems using Particle Swarm Optimization. <em>JETIR</em>, Vol. 12 No. 6, pp. 521–526 (2025).
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pub-section reveal">
+                <h3>Conference Publications</h3>
+                <ul class="pub-list">
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong> and Afzal Sikander. Controller design strategies for load frequency control in power system. In <em>SoCTA 2018</em>, pp. 1315–1328 (2020). <a href="https://doi.org/10.1007/978-981-15-0751-9_120" target="_blank">doi:10.1007/978-981-15-0751-9_120</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong>, R. Shriharshinii, M. Nitteesh, V. G. Yashwanth Kumar and D. Ezhilarasi. Actuator Selection for Lower Limb Exoskeleton Prototype Design for Paraplegic Patients. In <em>ICAARS 2022</em>, Vol. 1 No. 3, pp. 187–194 (2022).
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong>, Yogesh Bothara, D. Ezhilarasi and K. Mohanavelu. Atomic orbital search optimization based fractional order PID controller for 4 DoF lower limb exoskeleton. In <em>PICC 2023</em>, pp. 1–6 (2023). <a href="https://doi.org/10.1109/PICC57976.2023.10142336" target="_blank">doi:10.1109/PICC57976.2023.10142336</a>
+                    </li>
+                    <li class="pub-item">
+                        Md Imtiyaz Uddin, Rahul Kumar Sharma, <strong>Ram Kumar</strong> and D. Ezhilarasi. Adaptive backstepping control of 2-DOF helicopter system under parametric uncertainty. In <em>PICC 2023</em>, pp. 1–6 (2023). <a href="https://doi.org/10.1109/PICC57976.2023.10142491" target="_blank">doi:10.1109/PICC57976.2023.10142491</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong>, Rajesh Kumar Dutta, Aman Kumar and Abhishek Kumar Pandey. Enhanced Automatic Generation Control in Multi-Area Power Systems Using Aquila Optimization Tuned PID Controller. In <em>NCRAECC 2025</em>, pp. 1–6 (2025).
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong>, Ashish Kumar, Jyoti Kumar, Love Kumar and Abhishek Kumar. IoT Enabled Smart Irrigation System for Efficient Water Resource Management. In <em>NCRAECC 2025</em>, pp. 1–4 (2025).
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong>, Vimal Singh Bisht, Priyajit Dash, Sunil Sharma, Subhendu Sekhar Sahoo and Rishav Kumar Gupta. Modeling and Simulation of Solar Powered EV Charging Circuit for Smart Grid Integration in G2V and V2G Modes. In <em>ODICON 2026</em>, pp. 1–5 (2026). <a href="https://doi.org/10.1109/ODICON66687.2026.11470801" target="_blank">doi:10.1109/ODICON66687.2026.11470801</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong>, Navneet Joshi, Priyajit Dash, Sunil Sharma, Subhendu Sekhar Sahoo and Jyoti Kumar. Order Reduction Based on Archimedes Optimization Algorithm. In <em>ODICON 2026</em>, pp. 1–5 (2026). <a href="https://doi.org/10.1109/ODICON66687.2026.11470624" target="_blank">doi:10.1109/ODICON66687.2026.11470624</a>
+                    </li>
+                    <li class="pub-item">
+                        <strong>Ram Kumar</strong>, Priyajit Dash, D. Ezhilarasi, Kumar Debi Prasad, Md Rizwan Khan and Jyoti Kumar. A New Meta-heuristic Approach for Reduced Order Modeling of Complex SISO Systems based on Ali Baba and Forty Thieves Algorithm. In <em>EPREC 2026</em>, pp. 1–6 (2026). <a href="https://doi.org/10.1109/EPREC66546.2026.11412053" target="_blank">doi:10.1109/EPREC66546.2026.11412053</a>
+                    </li>
+                    <li class="pub-item">
+                        Priyajit Dash, <strong>Ram Kumar</strong>, Sunil Sharma and Sajjan Singh. A New Framework for Model Order Reduction in SISO and MIMO Systems. In <em>IEEE MPCON 2026</em>, pp. 7–12 (2026). <a href="https://doi.org/10.1109/MPCON69668.2026.11508523" target="_blank">doi:10.1109/MPCON69668.2026.11508523</a>
+                    </li>
+                    <li class="pub-item">
+                        Priyajit Dash, <strong>Ram Kumar</strong>, Sunil Sharma and Sajjan Singh. Robust Reduced Order Model and Controller Design for High Order Systems Using Honey Badger Optimization. In <em>IEEE MPCON 2026</em>, pp. 580–584 (2026). <a href="https://doi.org/10.1109/MPCON69668.2026.11508331" target="_blank">doi:10.1109/MPCON69668.2026.11508331</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" style="background: var(--secondary);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Mentorship</span>
+                <h2 class="section-title">UG Projects Guided</h2>
+                <p class="section-subtitle">Supervising innovative undergraduate projects at the intersection of theory and practice.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <h3>Solar based electric vehicle charging circuit in three phase G2V and V2G modes</h3>
+                        <span class="project-year">2025</span>
+                    </div>
+                    <div class="project-meta">
+                        <span><i class="fas fa-users"></i> 4 Students</span>
+                    </div>
+                    <p>The project focuses on developing a solar-powered electric vehicle (EV) charging circuit capable of operating in both Grid-to-Vehicle (G2V) and Vehicle-to-Grid (V2G) modes using a three-phase system. It ensures efficient bidirectional power flow, enabling sustainable energy utilization and grid support.</p>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <h3>Modeling & Simulation of Three Phase Grid Connected Solar PV System</h3>
+                        <span class="project-year">2025</span>
+                    </div>
+                    <div class="project-meta">
+                        <span><i class="fas fa-users"></i> 3 Students</span>
+                    </div>
+                    <p>This project involves the modeling and simulation of a three-phase grid-connected solar PV system to analyze its performance under varying solar and grid conditions. It aims to ensure efficient power injection into the grid while maintaining stability and power quality.</p>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <h3>Load frequency control of two area power system using PID controller</h3>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <div class="project-meta">
+                        <span><i class="fas fa-users"></i> 3 Students</span>
+                    </div>
+                    <p>This project focuses on load frequency control of a two-area interconnected power system using a PID controller to maintain system frequency and tie-line power within acceptable limits. The PID controller ensures stable operation by minimizing frequency deviations due to load disturbances.</p>
+                    <div class="project-award"><i class="fas fa-award"></i> Paper Accepted at E2ACON NITJ 2025</div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <h3>Intelligent Cloud Integrated Enhanced Irrigation System</h3>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <div class="project-meta">
+                        <span><i class="fas fa-users"></i> 3 Students</span>
+                    </div>
+                    <p>This project presents an intelligent irrigation system integrated with cloud computing to enable real-time monitoring and automated water control based on soil and environmental conditions. It enhances water efficiency and crop yield by leveraging IoT sensors and data-driven decision-making.</p>
+                    <div class="project-award"><i class="fas fa-trophy"></i> Best Paper Award at E2ACON NITJ 2025</div>
+                </div>
+
+                <div class="project-card reveal" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
+                    <div class="project-header">
+                        <h3>Vehicle Accident Detection and Alert System</h3>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <div class="project-meta">
+                        <span><i class="fas fa-users"></i> 5 Students</span>
+                    </div>
+                    <p>This project develops a vehicle accident detection and alert system using sensors and microcontrollers to identify collisions in real time. Upon detection, it automatically sends the location and alert message to emergency contacts or services, enabling faster response and assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Career</span>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">Academic journey spanning teaching, research, and industry collaboration.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 — Present</span>
+                        <h3>Assistant Professor</h3>
+                        <div class="org">Government Engineering College, Khagaria, Bihar</div>
+                        <p>Teaching undergraduate courses, guiding research projects, and leading departmental research initiatives in power system and control system.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 — 2021</span>
+                        <h3>Junior Research Fellow</h3>
+                        <div class="org">Dr. B. R. Ambedkar NIT Jalandhar, Punjab</div>
+                        <p>Development of Reduced Order Modules for Large Scale Systems. Published 4 research papers during the tenure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional -->
+    <section id="additional" style="background: var(--secondary);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Activities</span>
+                <h2 class="section-title">Academic Activities</h2>
+                <p class="section-subtitle">Beyond research — shaping the next generation of engineers through mentorship and workshops.</p>
+            </div>
+            <div class="cards-container">
+                <div class="card reveal">
+                    <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="card-content">
+                        <h3>Teaching Philosophy</h3>
+                        <p>I emphasize conceptual understanding through practical applications, industry case studies, and hands-on projects to prepare students for real-world challenges.</p>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <div class="card-content">
+                        <h3>Student Guidance</h3>
+                        <p>Regular office hours, research mentorship, and career counseling. I guide students for higher studies and competitive examinations.</p>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><i class="fas fa-book"></i></div>
+                    <div class="card-content">
+                        <h3>Professional Development</h3>
+                        <p>Conducted 4 workshops on MATLAB and Proteus software technologies, bridging the gap between academic learning and industry tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-name">Mr. Ram Kumar</div>
+                <div class="footer-title">Assistant Professor | Electrical Engineering</div>
+                <div class="academic-profiles">
+                    <a href="https://scholar.google.com/citations?user=JqHwn2EAAAAJ" class="profile-link" title="Google Scholar" target="_blank">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Ram-Kumar-119" class="profile-link" title="ResearchGate" target="_blank">
+                        <i class="fab fa-researchgate"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ramahk92/" class="profile-link" title="LinkedIn" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://orcid.org/0000-0002-7926-728X" class="profile-link" title="ORCID" target="_blank">
+                        <i class="fab fa-orcid"></i>
+                    </a>
+                    <a href="https://independent.academia.edu/RamKumarGECKh" class="profile-link" title="Academia" target="_blank">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://www.webofscience.com/wos/author/record/ABE-4538-2022" class="profile-link" title="Web of Science" target="_blank">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://www.geckhagaria.org.in/faculty/ram-kumar/" class="profile-link" title="Faculty Profile" target="_blank">
+                        <i class="fas fa-university"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Mr. Ram Kumar | Department of Electrical Engineering</p>
+                    <p>Government Engineering College, Khagaria, Bihar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar visibility on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight * 0.6) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+        }
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
