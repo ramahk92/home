@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Mr. Ram Kumar, Assistant Professor, Department of Electrical Engineering, Government Engineering College, Khagaria.">
+    <title>Contact Me — Mr. Ram Kumar</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='46' text-anchor='middle' fill='%2360a5fa' font-family='Georgia,serif' font-weight='bold'%3ERK%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">R.K.</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-page="home" onclick="closeMenu()">Home</a></li>
+                <li><a href="about.html" data-page="about" onclick="closeMenu()">About</a></li>
+                <li><a href="subjects.html" data-page="subjects" onclick="closeMenu()">Subjects</a></li>
+                <li><a href="research.html" data-page="research" onclick="closeMenu()">Research</a></li>
+                <li><a href="projects.html" data-page="projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="experience.html" data-page="experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="activities.html" data-page="activities" onclick="closeMenu()">Activities</a></li>
+                <li><a href="https://script.google.com/macros/s/AKfycbxrsyjUzUqsVujTWzFIOBNI5kKBzgZzR8lpMwyW4IZQ7X_NEGliqnsJFXqWpHECJUnxlg/exec" data-page="students-portal" target="_blank" rel="noopener" onclick="closeMenu()">Students Portal</a></li>
+                <li><a href="contact.html" data-page="contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <span class="section-tag">Get in Touch</span>
+            <h1>Contact Me</h1>
+            <p>Have a question, collaboration idea, or research inquiry? Feel free to reach out.</p>
+            <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact</span></div>
+        </div>
+    </div>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-form-wrapper reveal">
+                <form id="contactForm" novalidate>
+                    <!-- Web3Forms access key — replace YOUR_ACCESS_KEY with the key from https://web3forms.com -->
+                    <input type="hidden" name="access_key" value="dea35a7d-a72d-4743-9766-60b85183429b">
+                    <input type="hidden" name="subject" value="New Contact Form Submission — Prof. Ram Kumar">
+                    <input type="hidden" name="from_name" value="Prof. Ram Kumar Portfolio">
+                    <input type="checkbox" name="botcheck" style="display:none">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="cf-name">Full Name <span style="color:var(--accent)">*</span></label>
+                            <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-email">Email Address <span style="color:var(--accent)">*</span></label>
+                            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-phone">Phone Number</label>
+                            <input type="tel" id="cf-phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-subject">Subject <span style="color:var(--accent)">*</span></label>
+                            <select id="cf-subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="research">Research Collaboration</option>
+                                <option value="academic">Academic Inquiry</option>
+                                <option value="project">Project Guidance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label for="cf-message">Message <span style="color:var(--accent)">*</span></label>
+                            <textarea id="cf-message" name="message" placeholder="Write your message here…" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-name">Mr. Ram Kumar</div>
+                <div class="footer-title">Assistant Professor | Electrical Engineering</div>
+                <div class="academic-profiles">
+                    <a href="https://scholar.google.com/citations?user=JqHwn2EAAAAJ" class="profile-link profile-google" title="Google Scholar" target="_blank" rel="noopener"><i class="fab fa-google"></i></a>
+                    <a href="https://www.researchgate.net/profile/Ram-Kumar-119" class="profile-link profile-researchgate" title="ResearchGate" target="_blank" rel="noopener"><i class="fab fa-researchgate"></i></a>
+                    <a href="https://www.linkedin.com/in/ramahk92/" class="profile-link profile-linkedin" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://orcid.org/0000-0002-7926-728X" class="profile-link profile-orcid" title="ORCID" target="_blank" rel="noopener"><i class="fab fa-orcid"></i></a>
+                    <a href="https://independent.academia.edu/RamKumarGECKh" class="profile-link profile-academia" title="Academia" target="_blank" rel="noopener"><i class="fas fa-globe"></i></a>
+                    <a href="https://www.webofscience.com/wos/author/record/ABE-4538-2022" class="profile-link profile-wos" title="Web of Science" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://www.geckhagaria.org.in/faculty/ram-kumar/" class="profile-link profile-faculty" title="Faculty Profile" target="_blank" rel="noopener"><i class="fas fa-university"></i></a>
+                    <a href="https://www.instagram.com/learn.engg.with.rk/" class="profile-link profile-instagram" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="https://whatsapp.com/channel/0029VbD6rbKIHphKu4iLb10Y" class="profile-link profile-whatsapp" title="WhatsApp Community" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="visitor-counter">
+                    <span class="visitor-label">Total Visitors:</span>
+                    <img src="https://api.visitorbadge.io/api/visitors?path=geckhagaria-ramkumar-faculty-portfolio&label=%20&countColor=%233b82f6&style=flat-square" alt="Visitor count badge" loading="lazy">
+                </div>
+                <div class="copyright">
+                    <p>&copy; <span class="copyright-year">2026</span> Mr. Ram Kumar | Department of Electrical Engineering</p>
+                    <p>Government Engineering College, Khagaria, Bihar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

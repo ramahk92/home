@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Subjects taught by Mr. Ram Kumar — syllabus, notes, lab manuals, assignments and quizzes for each course.">
+    <title>Subjects Taught — Mr. Ram Kumar</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='46' text-anchor='middle' fill='%2360a5fa' font-family='Georgia,serif' font-weight='bold'%3ERK%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="subjects">
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">R.K.</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-page="home" onclick="closeMenu()">Home</a></li>
+                <li><a href="about.html" data-page="about" onclick="closeMenu()">About</a></li>
+                <li><a href="subjects.html" data-page="subjects" onclick="closeMenu()">Subjects</a></li>
+                <li><a href="research.html" data-page="research" onclick="closeMenu()">Research</a></li>
+                <li><a href="projects.html" data-page="projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="experience.html" data-page="experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="activities.html" data-page="activities" onclick="closeMenu()">Activities</a></li>
+                <li><a href="https://script.google.com/macros/s/AKfycbxrsyjUzUqsVujTWzFIOBNI5kKBzgZzR8lpMwyW4IZQ7X_NEGliqnsJFXqWpHECJUnxlg/exec" data-page="students-portal" target="_blank" rel="noopener" onclick="closeMenu()">Students Portal</a></li>
+                <li><a href="contact.html" data-page="contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <span class="section-tag">Teaching</span>
+            <h1>Subjects Taught</h1>
+            <p>Undergraduate courses combining theoretical foundations with practical applications. Select a subject to view its syllabus, notes, lab manuals, assignments and quiz/tests.</p>
+            <div class="breadcrumb"><a href="index.html">Home</a> / <span>Subjects</span></div>
+        </div>
+    </div>
+
+    <section id="subjects">
+        <div class="container">
+            <div class="subjects-grid">
+                <a class="subject-card reveal" href="subjects/power-systems.html">
+                    <div class="subject-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Power Systems Engineering</h3>
+                    <p>Comprehensive study of generation, transmission, and distribution systems, including load flow analysis and stability concepts.</p>
+                    <span class="subject-link-cta">Syllabus, notes &amp; more <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a class="subject-card reveal" href="subjects/renewable-energy.html">
+                    <div class="subject-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Renewable Energy Systems</h3>
+                    <p>Design and analysis of solar, wind, and hybrid renewable energy systems with grid integration challenges.</p>
+                    <span class="subject-link-cta">Syllabus, notes &amp; more <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a class="subject-card reveal" href="subjects/control-systems.html">
+                    <div class="subject-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3>Control Systems Engineering</h3>
+                    <p>Analysis and design of feedback control systems with applications in electrical engineering domains.</p>
+                    <span class="subject-link-cta">Syllabus, notes &amp; more <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a class="subject-card reveal" href="subjects/electrical-machines.html">
+                    <div class="subject-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Electrical Machines</h3>
+                    <p>Principles, operation, and performance characteristics of transformers, DC and AC machines.</p>
+                    <span class="subject-link-cta">Syllabus, notes &amp; more <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a class="subject-card reveal" href="subjects/power-electronics.html">
+                    <div class="subject-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Power Electronics</h3>
+                    <p>Study of power semiconductor devices, converters, inverters, and their applications in power systems.</p>
+                    <span class="subject-link-cta">Syllabus, notes &amp; more <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a class="subject-card reveal" href="subjects/smart-grid.html">
+                    <div class="subject-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Smart Grid Technologies</h3>
+                    <p>Advanced concepts in modern grid infrastructure, including IoT applications, smart metering, and grid automation.</p>
+                    <span class="subject-link-cta">Syllabus, notes &amp; more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-name">Mr. Ram Kumar</div>
+                <div class="footer-title">Assistant Professor | Electrical Engineering</div>
+                <div class="visitor-counter">
+                    <span class="visitor-label">Total Visitors:</span>
+                    <img src="https://api.visitorbadge.io/api/visitors?path=geckhagaria-ramkumar-faculty-portfolio&label=%20&countColor=%233b82f6&style=flat-square" alt="Visitor count badge" loading="lazy">
+                </div>
+                <div class="copyright">
+                    <p>&copy; <span class="copyright-year">2026</span> Mr. Ram Kumar | Department of Electrical Engineering</p>
+                    <p>Government Engineering College, Khagaria, Bihar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
