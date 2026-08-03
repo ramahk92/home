@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital Electronics — syllabus, notes, lab manuals, assignments and quizzes, by Mr. Ram Kumar.">
+    <title>Digital Electronics — Mr. Ram Kumar</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='46' text-anchor='middle' fill='%2360a5fa' font-family='Georgia,serif' font-weight='bold'%3ERK%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="subjects">
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">R.K.</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" data-page="home" onclick="closeMenu()">Home</a></li>
+                <li><a href="../about.html" data-page="about" onclick="closeMenu()">About</a></li>
+                <li><a href="../subjects.html" data-page="subjects" onclick="closeMenu()">Subjects</a></li>
+                <li><a href="../research.html" data-page="research" onclick="closeMenu()">Research</a></li>
+                <li><a href="../projects.html" data-page="projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="../experience.html" data-page="experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="../activities.html" data-page="activities" onclick="closeMenu()">Activities</a></li>
+                <li><a href="https://script.google.com/macros/s/AKfycbxrsyjUzUqsVujTWzFIOBNI5kKBzgZzR8lpMwyW4IZQ7X_NEGliqnsJFXqWpHECJUnxlg/exec" data-page="students-portal" target="_blank" rel="noopener" onclick="closeMenu()">Students Portal</a></li>
+                <li><a href="../contact.html" data-page="contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <span class="section-tag">Subject</span>
+            <h1>Digital Electronics</h1>
+            <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../subjects.html">Subjects</a> / <span>Digital Electronics</span></div>
+        </div>
+    </div>
+
+    <section id="resources">
+        <div class="container">
+            <div class="resource-tabs">
+                <div class="resource-tabs-nav">
+                    <button class="tab-btn active" data-tab="syllabus"><i class="fas fa-list-ol"></i> Syllabus</button>
+                    <button class="tab-btn" data-tab="notes"><i class="fas fa-book-open"></i> Notes</button>
+                    <button class="tab-btn" data-tab="lab"><i class="fas fa-flask"></i> Lab Manuals</button>
+                    <button class="tab-btn" data-tab="assignments"><i class="fas fa-pen"></i> Assignments</button>
+                    <button class="tab-btn" data-tab="quiz"><i class="fas fa-question-circle"></i> Quiz &amp; Test</button>
+                </div>
+
+                <div class="tab-panel active" data-tab="syllabus">
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-microchip"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 1.0: Fundamentals of Digital Systems and logic families (6 hrs)</h4>
+                                <span>Digital signals, digital circuits, AND, OR, NOT, NAND, NOR and Exclusive OR operations, Boolean algebra, number systems-binary, signed binary, octal, hexadecimal number, binary arithmetic, one's and two's complements arithmetic, codes, error detecting and correcting codes, characteristics of digital ICs, examples of IC gates, digital logic families, TTL, Schottky TTL and CMOS logic, interfacing CMOS and TTL, Tri-state logic.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-diagram-project"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 2.0: Combinational Digital Circuits (8 hrs)</h4>
+                                <span>Standard representation for logic functions, K-map representation, simplification of logic functions using K-map, minimization of logical functions. Don't care conditions, Multiplexer, De-Multiplexer/Decoders, Adders, Sub tractors, BCD arithmetic, carry look ahead adder, serial adder, ALU, elementary ALU design, popular MSI chips, digital comparator, parity checker/generator, code converters, priority encoders, decoders/drivers for display devices, Quine-Mc cluskey method of function realization.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-sync"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 3.0: Sequential circuits and systems (8 hrs)</h4>
+                                <span>A 1-bit memory, the circuit properties of Bistable latch, the clocked SR flip flop, J- K, T and D types flip flops, applications of flip flops, shift registers, applications of shift registers, serial to parallel converter, parallel to serial converter, ring counter, sequence generator, ripple (Asynchronous) counters, synchronous counters, counters design using flip flops, special counter ICs, asynchronous sequential counters, applications of counters.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-exchange-alt"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 4.0: A/D and D/A Converters (8 hrs)</h4>
+                                <span>Digital to analog converters: weighted resistor/converter, R-2R Ladder D/A converter, specifications for D/A converters, examples of D/A converter ICs, sample and hold circuit, analog to digital converters: quantization and encoding, parallel comparator A/D converter, successive approximation A/D converter, counting A/D converter, dual slope A/D converter, A/D converter using voltage to frequency and voltage to time conversion, specifications of A/D converters, example of A/D converter ICs.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-memory"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 5.0: Semiconductor memories and Programmable logic devices (8 hrs)</h4>
+                                <span>Memory organization and operation, expanding memory size, classification and characteristics of memories, sequential memory, read only memory (ROM), read and write memory(RAM), content addressable memory (CAM), charge de coupled device memory (CCD), commonly used memory chips, ROM as a PLD.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-th-large"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 6.0: Programmable Logic Devices (4 hrs)</h4>
+                                <span>Programmable logic array, Programmable array logic, complex Programmable logic devices (CPLDS), Field Programmable Gate Array (FPGA).</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-book"></i></div>
+                            <div class="resource-info">
+                                <h4>Textbook / Reference Book</h4>
+                                <ol>
+                                    <li>R. P. Jain, "Modern Digital Electronics", McGraw Hill Education, 2009.</li>
+                                    <li>M. M. Mano, "Digital logic and Computer design", Pearson Education India, 2016.</li>
+                                    <li>A. Kumar, "Fundamentals of Digital Circuits", Prentice Hall India, 2016.</li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="notes">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 1 - Fundamentals of Digital Systems and Logic Families</h4></div><a class="resource-download" href="files/digital-electronics-Unit1-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 2 - Combinational Digital Circuits</h4></div><a class="resource-download" href="files/digital-electronics-Unit2-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 3 - Sequential Circuits and Systems</h4></div><a class="resource-download" href="files/digital-electronics-Unit3-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 4 - A/D and D/A Converters</h4></div><a class="resource-download" href="files/digital-electronics-Unit4-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 5 - Semiconductor Memories and Programmable Logic Devices</h4></div><a class="resource-download" href="files/digital-electronics-Unit5-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 6 - Programmable Logic Devices</h4></div><a class="resource-download" href="files/digital-electronics-Unit6-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="lab">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 1: Study and verify the operation of all logic gates.</h4></div><a class="resource-download" href="files/digital-electronics-lab1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 2: Design and verify NAND &amp; NOR Gate as a Universal gates.</h4></div><a class="resource-download" href="files/digital-electronics-lab2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 3: Design and Verify DE Morgan's Theorem.</h4></div><a class="resource-download" href="files/digital-electronics-lab3.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 4: Design and verify Binary to Gray &amp; Gray to Binary Conversion.</h4></div><a class="resource-download" href="files/digital-electronics-lab4.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 5: Design and verify Half adder circuit &amp; Half Subtractor circuit.</h4></div><a class="resource-download" href="files/digital-electronics-lab5.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 6: Design and Verify Full adder circuit &amp; Full Subtractor Circuit.</h4></div><a class="resource-download" href="files/digital-electronics-lab6.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 7: Study and verify multiplexer and De-multiplexer Circuit.</h4></div><a class="resource-download" href="files/digital-electronics-lab7.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 8: Design and Verify BCD to 7-segment display.</h4></div><a class="resource-download" href="files/digital-electronics-lab8.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 9: Study of Encoder and Decoder circuit.</h4></div><a class="resource-download" href="files/digital-electronics-lab9.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 10: Study of characteristics of SR, JK, T &amp; Master-Slave Flip-Flop.</h4></div><a class="resource-download" href="files/digital-electronics-lab10.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 11: Design and Verify shift register circuit.</h4></div><a class="resource-download" href="files/digital-electronics-lab11.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 12: Study and Verify weighted Binary DAC, R-2R ladder DAC &amp; Flash ADC.</h4></div><a class="resource-download" href="files/digital-electronics-lab12.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 13: Study of Johnson counter &amp; Binary counter.</h4></div><a class="resource-download" href="files/digital-electronics-lab13.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 14: Study of 4-bit Synchronous Up/Down mod-n counter.</h4></div><a class="resource-download" href="files/digital-electronics-lab14.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="assignments">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 1 - Fundamentals of Digital Systems &amp; Logic Families</h4><span>Unit 1</span></div><a class="resource-download" href="files/digital-electronics-assignment1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 2 - Combinational Digital Circuits</h4><span>Unit 2</span></div><a class="resource-download" href="files/digital-electronics-assignment2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 3 - Sequential Circuits and Systems</h4><span>Unit 3</span></div><a class="resource-download" href="files/digital-electronics-assignment3.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 4 - A/D and D/A Converters</h4><span>Unit 4</span></div><a class="resource-download" href="files/digital-electronics-assignment4.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 5 - Semiconductor Memories &amp; Programmable Logic Devices</h4><span>Unit 5</span></div><a class="resource-download" href="files/digital-electronics-assignment5.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 6 - Programmable Logic Devices (PLA/PAL/CPLD/FPGA)</h4><span>Unit 6</span></div><a class="resource-download" href="files/digital-electronics-assignment6.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="quiz">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-question-circle"></i></div><div class="resource-info"><h4>Quiz 1 - Units 1 &amp; 2</h4><span>Objective type</span></div><a class="resource-download" href="files/digital-electronics-quiz1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-question-circle"></i></div><div class="resource-info"><h4>Quiz 2 - Units 3 &amp; 4</h4><span>Objective type</span></div><a class="resource-download" href="files/digital-electronics-quiz2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-alt"></i></div><div class="resource-info"><h4>End-Semester Model Test Paper</h4><span>All Units</span></div><a class="resource-download" href="files/digital-electronics-model-test.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-name">Mr. Ram Kumar</div>
+                <div class="footer-title">Assistant Professor | Electrical Engineering</div>
+                <div class="visitor-counter">
+                    <span class="visitor-label">Total Visitors:</span>
+                    <img src="https://api.visitorbadge.io/api/visitors?path=geckhagaria-ramkumar-faculty-portfolio&label=%20&countColor=%233b82f6&style=flat-square" alt="Visitor count badge" loading="lazy">
+                </div>
+                <div class="copyright">
+                    <p>&copy; <span class="copyright-year">2026</span> Mr. Ram Kumar | Department of Electrical Engineering</p>
+                    <p>Government Engineering College, Khagaria, Bihar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

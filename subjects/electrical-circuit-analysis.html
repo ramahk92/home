@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electrical Circuit Analysis — syllabus, notes, lab manuals, assignments and quizzes, by Mr. Ram Kumar.">
+    <title>Electrical Circuit Analysis — Mr. Ram Kumar</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='46' text-anchor='middle' fill='%2360a5fa' font-family='Georgia,serif' font-weight='bold'%3ERK%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="subjects">
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">R.K.</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" data-page="home" onclick="closeMenu()">Home</a></li>
+                <li><a href="../about.html" data-page="about" onclick="closeMenu()">About</a></li>
+                <li><a href="../subjects.html" data-page="subjects" onclick="closeMenu()">Subjects</a></li>
+                <li><a href="../research.html" data-page="research" onclick="closeMenu()">Research</a></li>
+                <li><a href="../projects.html" data-page="projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="../experience.html" data-page="experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="../activities.html" data-page="activities" onclick="closeMenu()">Activities</a></li>
+                <li><a href="https://script.google.com/macros/s/AKfycbxrsyjUzUqsVujTWzFIOBNI5kKBzgZzR8lpMwyW4IZQ7X_NEGliqnsJFXqWpHECJUnxlg/exec" data-page="students-portal" target="_blank" rel="noopener" onclick="closeMenu()">Students Portal</a></li>
+                <li><a href="../contact.html" data-page="contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <span class="section-tag">Subject</span>
+            <h1>Electrical Circuit Analysis</h1>
+            <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../subjects.html">Subjects</a> / <span>Electrical Circuit Analysis</span></div>
+        </div>
+    </div>
+
+    <section id="resources">
+        <div class="container">
+            <div class="resource-tabs">
+                <div class="resource-tabs-nav">
+                    <button class="tab-btn active" data-tab="syllabus"><i class="fas fa-list-ol"></i> Syllabus</button>
+                    <button class="tab-btn" data-tab="notes"><i class="fas fa-book-open"></i> Notes</button>
+                    <button class="tab-btn" data-tab="lab"><i class="fas fa-flask"></i> Lab Manuals</button>
+                    <button class="tab-btn" data-tab="assignments"><i class="fas fa-pen"></i> Assignments</button>
+                    <button class="tab-btn" data-tab="quiz"><i class="fas fa-question-circle"></i> Quiz &amp; Test</button>
+                </div>
+
+                <div class="tab-panel active" data-tab="syllabus">
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-book-open"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 1.0: Introduction to Electrical Circuit Analysis (5 hrs)</h4>
+                                <span>Circuit Elements, Linear and Non-Linear Devices, Active and Passive Devices, Unilateral and Bilateral Devices, Energy Sources (Voltage Source &amp; Current Source), Source Transformation, Analysis with dependent current and voltage sources. Node and Mesh Analysis. Concept of duality and dual networks.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-diagram-project"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 2.0: Network Theorems (8 hrs)</h4>
+                                <span>Superposition theorem, Thevenin theorem, Norton theorem, Maximum power transfer theorem, Reciprocity theorem, Compensation theorem, Millman's Theorem, Tellegen's Theorem, Substitution Theorem.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 3.0: Solution of First and Second Order Networks (8 hrs)</h4>
+                                <span>Solution of first and second order differential equations for Series and parallel R-L, R-C, R-L-C circuits, initial and final conditions in network elements, forced and free response, time constants, steady state and transient state response.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-wave-square"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 4.0: Electrical Circuit Analysis Using Laplace Transforms (8 hrs)</h4>
+                                <span>Review of Laplace Transform, Analysis of electrical circuits using Laplace Transform for standard inputs, inverse Laplace transform, transformed network with initial conditions. Transfer function representation. Poles and Zeros. Series and parallel resonances.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-network-wired"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 5.0: Two-Port Network (7 hrs)</h4>
+                                <span>Two Port Networks, terminal pairs, relationship of two port variables, impedance parameters, admittance parameters, transmission parameters, and hybrid parameters, interconnections of two port networks.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div class="resource-info">
+                                <h4>Unit 6.0: Network Graph and Applications (6 hrs)</h4>
+                                <span>Network Graph and their applications in Network Analysis.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-book"></i></div>
+                            <div class="resource-info">
+                                <h4>Textbook / Reference Book</h4>
+                                <ol>
+                                    <li>M. E. Van Valkenburg, "Network Analysis", Prentice Hall, 2006.</li>
+                                    <li>D. Roy Choudhury, "Networks and Systems", New Age International Publications, 1998.</li>
+                                    <li>W. H. Hayt &amp; J. E. Kemmerly, "Engineering Circuit Analysis", McGraw-Hill Education, 2013.</li>
+                                    <li>C. K. Alexander and M. N. O. Sadiku, "Electric Circuits", McGraw-Hill Education, 2004.</li>
+                                    <li>K. V. V. Murthy and M. S. Kamath, "Basic Circuit Analysis", Jaico Publishers, 1999.</li>
+                                    <li>Kuo, Franklin. Network analysis and synthesis. John Wiley &amp; Sons, 2006.</li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="notes">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 1 — Introduction to Electrical Circuit Analysis</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-Unit1-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 2 — Network Theorems</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-Unit2-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 3 — Solution of First and Second Order Networks</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-Unit3-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 4 — Electrical Circuit Analysis Using Laplace Transforms</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-Unit4-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 5 — Two-Port Network</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-Unit5-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Unit 6 — Network Graph and Applications</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-Unit6-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="lab">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 1: Verification of the Superposition Theorem</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 2: Verification of Thevenin &amp; Norton Theorem</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 3: Verification of the Maximum Power Transfer Theorem</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab3.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 4: To Calculate the Characteristics Impedance of T &amp; Pi Network</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab4.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 5: To determine the Driving Point &amp; Transfer Function of a Two-Port Network</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab5.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 6: To study Series, Parallel &amp; Cascade Connection of Two-Port Network</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab6.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 7: To study Series &amp; Parallel Resonance Circuit</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab7.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 8: To study Transient &amp; Steady State Response Of R-L-C Circuit</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab8.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 9: To study the Frequency Response of the Twin T-Notch Filter</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab9.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 10: To study the Z-H Parameter of a Two-Port Network</h4></div><a class="resource-download" href="files/electrical-circuit-analysis-lab10.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="assignments">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 1 — Circuit Elements &amp; Network Analysis</h4><span>Unit 1</span></div><a class="resource-download" href="files/electrical-circuit-analysis-assignment1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 2 — Network Theorems</h4><span>Unit 2</span></div><a class="resource-download" href="files/electrical-circuit-analysis-assignment2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 3 — First &amp; Second Order Networks</h4><span>Unit 3</span></div><a class="resource-download" href="files/electrical-circuit-analysis-assignment3.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 4 — Laplace Transform Analysis</h4><span>Unit 4</span></div><a class="resource-download" href="files/electrical-circuit-analysis-assignment4.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 5 — Two-Port Network Parameters</h4><span>Unit 5</span></div><a class="resource-download" href="files/electrical-circuit-analysis-assignment5.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 6 — Network Graph Applications</h4><span>Unit 6</span></div><a class="resource-download" href="files/electrical-circuit-analysis-assignment6.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="quiz">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-question-circle"></i></div><div class="resource-info"><h4>Quiz 1 — Units 1 &amp; 2</h4><span>Objective type</span></div><a class="resource-download" href="files/electrical-circuit-analysis-quiz1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-question-circle"></i></div><div class="resource-info"><h4>Quiz 2 — Units 3 &amp; 4</h4><span>Objective type</span></div><a class="resource-download" href="files/electrical-circuit-analysis-quiz2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-alt"></i></div><div class="resource-info"><h4>End-Semester Model Test Paper</h4><span>All Units</span></div><a class="resource-download" href="files/electrical-circuit-analysis-model-test.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-name">Mr. Ram Kumar</div>
+                <div class="footer-title">Assistant Professor | Electrical Engineering</div>
+                <div class="visitor-counter">
+                    <span class="visitor-label">Total Visitors:</span>
+                    <img src="https://api.visitorbadge.io/api/visitors?path=geckhagaria-ramkumar-faculty-portfolio&label=%20&countColor=%233b82f6&style=flat-square" alt="Visitor count badge" loading="lazy">
+                </div>
+                <div class="copyright">
+                    <p>&copy; <span class="copyright-year">2026</span> Mr. Ram Kumar | Department of Electrical Engineering</p>
+                    <p>Government Engineering College, Khagaria, Bihar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

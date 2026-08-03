@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Control Systems Engineering — syllabus, notes, lab manuals, assignments and quizzes, by Mr. Ram Kumar.">
+    <title>Control Systems Engineering — Mr. Ram Kumar</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='46' text-anchor='middle' fill='%2360a5fa' font-family='Georgia,serif' font-weight='bold'%3ERK%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="subjects">
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">R.K.</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" data-page="home" onclick="closeMenu()">Home</a></li>
+                <li><a href="../about.html" data-page="about" onclick="closeMenu()">About</a></li>
+                <li><a href="../subjects.html" data-page="subjects" onclick="closeMenu()">Subjects</a></li>
+                <li><a href="../research.html" data-page="research" onclick="closeMenu()">Research</a></li>
+                <li><a href="../projects.html" data-page="projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="../experience.html" data-page="experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="../activities.html" data-page="activities" onclick="closeMenu()">Activities</a></li>
+                <li><a href="https://script.google.com/macros/s/AKfycbxrsyjUzUqsVujTWzFIOBNI5kKBzgZzR8lpMwyW4IZQ7X_NEGliqnsJFXqWpHECJUnxlg/exec" data-page="students-portal" target="_blank" rel="noopener" onclick="closeMenu()">Students Portal</a></li>
+                <li><a href="../contact.html" data-page="contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <span class="section-tag">Subject</span>
+            <h1>Control Systems Engineering</h1>
+            <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../subjects.html">Subjects</a> / <span>Control Systems Engineering</span></div>
+        </div>
+    </div>
+
+    <section id="resources">
+        <div class="container">
+            <div class="resource-tabs">
+                <div class="resource-tabs-nav">
+                    <button class="tab-btn active" data-tab="syllabus"><i class="fas fa-list-ol"></i> Syllabus</button>
+                    <button class="tab-btn" data-tab="notes"><i class="fas fa-book-open"></i> Notes</button>
+                    <button class="tab-btn" data-tab="lab"><i class="fas fa-flask"></i> Lab Manuals</button>
+                    <button class="tab-btn" data-tab="assignments"><i class="fas fa-pen"></i> Assignments</button>
+                    <button class="tab-btn" data-tab="quiz"><i class="fas fa-question-circle"></i> Quiz &amp; Test</button>
+                </div>
+
+                <div class="tab-panel active" data-tab="syllabus">
+                    
+                    <ul class="resource-list">
+                        
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-book-open"></i></div>
+                            <div class="resource-info">
+                                <h4>Module 1: Introduction to Control Problem (4 hrs)</h4>
+                                <span>Industrial control examples. Mathematical models of physical systems. Control hardware and their models. Transfer function models of linear time-invariant systems. Feedback control: open-loop and closed-loop systems. Benefits of feedback. Block diagram algebra.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="resource-info">
+                                <h4>Module 2: Time Response Analysis (9 hrs)</h4>
+                                <span>Standard test signals. Time response of first and second order systems for standard test inputs. Application of initial and final value theorem. Design specifications for second-order systems based on the time-response. Concept of stability. Routh-Hurwitz criteria. Relative stability analysis. Root-locus technique. Construction of root-loci.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-wave-square"></i></div>
+                            <div class="resource-info">
+                                <h4>Module 3: Frequency-Response Analysis (7 hrs)</h4>
+                                <span>Relationship between time and frequency response. Polar plots, Bode plots. Nyquist stability criterion. Relative stability using Nyquist criterion - gain and phase margin. Closed-loop frequency response.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-sliders-h"></i></div>
+                            <div class="resource-info">
+                                <h4>Module 4: Introduction to Controller Design (9 hrs)</h4>
+                                <span>Stability, steady-state accuracy, transient accuracy, disturbance rejection, insensitivity and robustness of control systems. Root-loci method of feedback controller design. Design specifications in frequency-domain. Frequency-domain methods of design. Application of proportional, integral and derivative controllers. Lead and lag compensation in designs. Analog and digital implementation of controllers.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div class="resource-info">
+                                <h4>Module 5: State Variable Analysis (7 hrs)</h4>
+                                <span>Concepts of state variables. State space model. Diagonalization of state matrix. Solution of state equations. Eigenvalues and stability analysis. Concept of controllability and observability. Pole-placement by state feedback. Discrete-time systems. Difference equations. State-space models of linear discrete-time systems. Stability of linear discrete-time systems.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="resource-info">
+                                <h4>Module 6: Introduction to Optimal Control and Nonlinear Control (5 hrs)</h4>
+                                <span>Performance indices. Regulator problem, tracking problem. Nonlinear system-basic concepts and analysis.</span>
+                            </div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-icon"><i class="fas fa-book"></i></div>
+                            <div class="resource-info">
+                                <h4>Textbook / Reference Book</h4>
+                                <ol>
+                                    <li>M. Gopal, Control Systems: Principles and Design, McGraw Hill Education, 1997.</li>
+                                    <li>B. C. Kuo, Automatic Control System, Prentice Hall, 1995.</li>
+                                    <li>K. Ogata, Modern Control Engineering, Prentice Hall, 1991.</li>
+                                    <li>I. J. Nagrath and M. Gopal, Control Systems Engineering, New Age International, 2009.</li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="notes">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Module 1 — Introduction to Control Problem</h4></div><a class="resource-download" href="files/control-systems-Module1-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Module 2  — Time Response Analysis</h4></div><a class="resource-download" href="files/control-systems-Module2-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Module 3  — Frequency-Response Analysis</h4></div><a class="resource-download" href="files/control-systems-Module3-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Module 4  — Introduction to Controller Design</h4></div><a class="resource-download" href="files/control-systems-Module4-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Module 5  — State Variable Analysis</h4></div><a class="resource-download" href="files/control-systems-Module5-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-pdf"></i></div><div class="resource-info"><h4>Module 5  — Introduction to Optimal Control and Nonlinear Control</h4></div><a class="resource-download" href="files/control-systems-Module5-notes.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="lab">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 1: To study the potentiometer as an error detector.</h4></div><a class="resource-download" href="files/control-systems-lab1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 2: To study the PID controller for an oven.</h4></div><a class="resource-download" href="files/control-systems-lab2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 3: To study the synchro transmission-receiver &amp output v/s input characteristics</h4></div><a class="resource-download" href="files/control-systems-lab3.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 4: To study the characteristics of a small A.C. servomotor.</h4></div><a class="resource-download" href="files/control-systems-lab4.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 5: Determine the transient response of a 2nd order system</h4></div><a class="resource-download" href="files/control-systems-lab5.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 6: To study the performance of an Analog PID controller using a simulated system.</h4></div><a class="resource-download" href="files/control-systems-lab5.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-flask"></i></div><div class="resource-info"><h4>Experiment 7: To study the behavior of DC-separated excited motors at open-loop and closed-loop control
+systems.</h4></div><a class="resource-download" href="files/control-systems-lab5.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="assignments">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 1 — Mathematical Modelling</h4><span>Module 1</span></div><a class="resource-download" href="files/control-systems-assignment1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 2 — Time Domain &amp; Stability Analysis</h4><span>Modules 2–3</span></div><a class="resource-download" href="files/control-systems-assignment2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 3 — Frequency Domain Analysis</h4><span>Module 4</span></div><a class="resource-download" href="files/control-systems-assignment3.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-pen"></i></div><div class="resource-info"><h4>Assignment 4 — State Space Design</h4><span>Module 5</span></div><a class="resource-download" href="files/control-systems-assignment4.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" data-tab="quiz">
+                    <ul class="resource-list">
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-question-circle"></i></div><div class="resource-info"><h4>Quiz 1 — Modules 1 &amp; 2</h4><span>Objective type</span></div><a class="resource-download" href="files/control-systems-quiz1.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-question-circle"></i></div><div class="resource-info"><h4>Quiz 2 — Modules 3 &amp; 4</h4><span>Objective type</span></div><a class="resource-download" href="files/control-systems-quiz2.pdf"><i class="fas fa-download"></i> Download</a></li>
+                        <li class="resource-item"><div class="resource-icon"><i class="fas fa-file-alt"></i></div><div class="resource-info"><h4>End-Semester Model Test Paper</h4><span>All Modules</span></div><a class="resource-download" href="files/control-systems-model-test.pdf"><i class="fas fa-download"></i> Download</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-name">Mr. Ram Kumar</div>
+                <div class="footer-title">Assistant Professor | Electrical Engineering</div>
+                <div class="visitor-counter">
+                    <span class="visitor-label">Total Visitors:</span>
+                    <img src="https://api.visitorbadge.io/api/visitors?path=geckhagaria-ramkumar-faculty-portfolio&label=%20&countColor=%233b82f6&style=flat-square" alt="Visitor count badge" loading="lazy">
+                </div>
+                <div class="copyright">
+                    <p>&copy; <span class="copyright-year">2026</span> Mr. Ram Kumar | Department of Electrical Engineering</p>
+                    <p>Government Engineering College, Khagaria, Bihar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
