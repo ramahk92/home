@@ -71,13 +71,123 @@
         <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
     </header>
 
+    <!-- Latest updates slideshow + notices -->
+    <section id="updates-notices">
+        <div class="container">
+            <div class="section-header reveal">
+                
+                <h2 class="section-title">Latest Updates &amp; Notices</h2>
+            </div>
+            <div class="updates-notices-grid">
+                <div class="updates-slideshow reveal" id="updatesSlideshow" aria-roledescription="carousel" aria-label="Latest updates">
+                    <div class="slideshow-track" id="slideshowTrack">
+                        <div class="slide">
+                            <div class="slide-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <h3>MATLAB &amp; Proteus Workshops</h3>
+                            <p>Conducted hands-on workshops bridging academic learning with industry-standard simulation tools.</p>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-icon"><i class="fas fa-flask"></i></div>
+                            <h3>Research &amp; Publications</h3>
+                            <p>35 publications and 180+ citations in power systems and control engineering.</p>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-icon"><i class="fas fa-users"></i></div>
+                            <h3>Student Mentorship</h3>
+                            <p>Guiding undergraduates through research projects, career counselling and competitive exams.</p>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-icon"><i class="fas fa-user-graduate"></i></div>
+                            <h3>Ph.D. in Progress</h3>
+                            <p>Currently pursuing a Ph.D. in Electrical Engineering alongside teaching duties.</p>
+                        </div>
+                    </div>
+                    <button class="slide-arrow prev" onclick="changeSlide(-1)" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slide-arrow next" onclick="changeSlide(1)" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+                    <div class="slide-dots" id="slideDots"></div>
+                </div>
+
+                <div class="notices-panel reveal">
+                    <div class="notices-header">
+                        <h3><i class="fas fa-bullhorn"></i> Latest News / Updates</h3>
+                    </div>
+                    <ul class="notices-list">
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> Jul 25, 2026</span>
+                                <span class="tag tag-news">News</span><span class="tag tag-notice">Notice</span>
+                            </div>
+                            <span class="notice-text">Induction Programme for B.Tech 2026-30 Batch</span>
+                        </li>
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> Jul 23, 2026</span>
+                                <span class="tag tag-news">News</span><span class="tag tag-notice">Notice</span>
+                            </div>
+                            <span class="notice-text">Application form for Guest Assistant Professor</span>
+                        </li>
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> May 13, 2026</span>
+                                <span class="tag tag-news">News</span><span class="tag tag-notice">Notice</span>
+                            </div>
+                            <span class="notice-text">Advertisement - UGEAC 2026</span>
+                        </li>
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> Apr 20, 2026</span>
+                                <span class="tag tag-news">News</span><span class="tag tag-notice">Notice</span>
+                            </div>
+                            <span class="notice-text">BCECE 2026 Admission Notice</span>
+                        </li>
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> Apr 08, 2026</span>
+                                <span class="tag tag-news">News</span><span class="tag tag-notice">Notice</span>
+                            </div>
+                            <span class="notice-text">BCECE LE Advertisement</span>
+                        </li>
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> Mar 17, 2026</span>
+                                <span class="tag tag-news">News</span><span class="tag tag-notice">Notice</span>
+                            </div>
+                            <span class="notice-text">Admission Notice - 2nd Year</span>
+                        </li>
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> Nov 25, 2025</span>
+                                <span class="tag tag-news">News</span><span class="tag tag-notice">Notice</span>
+                            </div>
+                            <span class="notice-text">Ramanujan Talent Search Exam</span>
+                        </li>
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> Nov 17, 2025</span>
+                                <span class="tag tag-news">News</span>
+                            </div>
+                            <span class="notice-text">Two-Week Hands-on Workshop/FDP "Engineering Applications with MATLAB Programming and Simulink"</span>
+                        </li>
+                        <li>
+                            <div class="notice-meta">
+                                <span class="notice-date"><i class="far fa-clock"></i> Nov 14, 2025</span>
+                                <span class="tag tag-news">News</span><span class="tag tag-notice">Notice</span>
+                            </div>
+                            <span class="notice-text">1st National Conference on "Emerging Technologies and Industrial Applications" (NCETIA - 2025)</span>
+                        </li>
+                    </ul>
+                    <a class="notices-viewall" href="https://www.geckhagaria.org.in/" target="_blank" rel="noopener">View All Notices <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Quick navigation to every page -->
     <section id="explore">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Explore</span>
-                <h2 class="section-title">Find What You're Looking For</h2>
-                <p class="section-subtitle">Each area of my academic profile now has its own dedicated page.</p>
+                
             </div>
             <div class="quicklinks-grid">
                 <a class="subject-card reveal" href="about.html">
