@@ -26,6 +26,46 @@ function closeMenu() {
     });
 })();
 
+// ===== Home: latest-updates slideshow (auto-rotating carousel) =====
+(function initUpdatesSlideshow() {
+    const track = document.getElementById('slideshowTrack');
+    const dotsWrap = document.getElementById('slideDots');
+    if (!track || !dotsWrap) return;
+
+    const slides = Array.from(track.children);
+    let current = 0;
+    let autoTimer;
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function goToSlide(index) {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    window.changeSlide = (dir) => { goToSlide(current + dir); resetAutoRotate(); };
+
+    function resetAutoRotate() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => goToSlide(current + 1), 5000);
+    }
+
+    const slideshow = document.getElementById('updatesSlideshow');
+    if (slideshow) {
+        slideshow.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        slideshow.addEventListener('mouseleave', resetAutoRotate);
+    }
+    resetAutoRotate();
+})();
+
 // ===== Reveal-on-scroll animation =====
 const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 const revealObserver = new IntersectionObserver((entries) => {
@@ -49,6 +89,20 @@ document.querySelectorAll('.resource-tabs').forEach(wrapper => {
             if (target) target.classList.add('active');
         });
     });
+});
+
+// ===== Resource downloads (Notes / Lab Manuals / Assignments / Quiz PDFs) —
+// open in a new tab (fallback) and save using the resource's own title as
+// the downloaded filename instead of the raw files/xxx.pdf name =====
+document.querySelectorAll('.resource-item').forEach(item => {
+    const link = item.querySelector('.resource-download');
+    const titleEl = item.querySelector('.resource-info h4');
+    if (!link || !titleEl) return;
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener');
+    const ext = (link.getAttribute('href').split('.').pop() || 'pdf').split(/[?#]/)[0];
+    const safeName = titleEl.textContent.trim().replace(/[\\/:*?"<>|]+/g, '-').replace(/\s+/g, ' ');
+    link.setAttribute('download', safeName + '.' + ext);
 });
 
 // ===== Contact form handler — Web3Forms =====
