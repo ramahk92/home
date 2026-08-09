@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ohm's Law Virtual Lab</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      color: #38bdf8;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    p.subtitle {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .lab-container {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      max-width: 950px;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .lab-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    .control-group {
+      margin-bottom: 24px;
+    }
+
+    .control-group label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      font-family: monospace;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    .badge-v { background: #0284c7; color: #e0f2fe; }
+    .badge-r { background: #16a34a; color: #dcfce7; }
+
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #475569;
+      outline: none;
+      accent-color: #38bdf8;
+      cursor: pointer;
+    }
+
+    .readouts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .readout-box {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+      border: 1px solid #334155;
+    }
+
+    .readout-box .title {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .readout-box .val {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 6px;
+      font-family: monospace;
+    }
+
+    .val-i { color: #facc15; }
+    .val-p { color: #f43f5e; }
+
+    .canvas-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      background-color: #020617;
+      border-radius: 8px;
+      border: 1px solid #334155;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ohm's Law Virtual Lab</h1>
+    <p class="subtitle">Interactively observe the relation: <strong>V = I × R</strong></p>
+  </header>
+
+  <div class="lab-container">
+    <!-- Controls Panel -->
+    <div class="card">
+      <div class="control-group">
+        <label for="voltage">
+          <span>DC Voltage (V)</span>
+          <span class="badge badge-v" id="vVal">10.0 V</span>
+        </label>
+        <input type="range" id="voltage" min="0" max="30" step="0.5" value="10">
+      </div>
+
+      <div class="control-group">
+        <label for="resistance">
+          <span>Resistance (R)</span>
+          <span class="badge badge-r" id="rVal">100 Ω</span>
+        </label>
+        <input type="range" id="resistance" min="10" max="1000" step="10" value="100">
+      </div>
+
+      <div class="readouts">
+        <div class="readout-box">
+          <div class="title">Current (I)</div>
+          <div class="val val-i" id="iVal">100 mA</div>
+        </div>
+        <div class="readout-box">
+          <div class="title">Power (P)</div>
+          <div class="val val-p" id="pVal">1.00 W</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Canvas Panel -->
+    <div class="card">
+      <div class="canvas-container">
+        <canvas id="circuitCanvas" width="550" height="360"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const vInput = document.getElementById('voltage');
+    const rInput = document.getElementById('resistance');
+    
+    const vVal = document.getElementById('vVal');
+    const rVal = document.getElementById('rVal');
+    const iVal = document.getElementById('iVal');
+    const pVal = document.getElementById('pVal');
+    
+    const canvas = document.getElementById('circuitCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let electronOffset = 0;
+
+    function updateCalculations() {
+      const V = parseFloat(vInput.value);
+      const R = parseFloat(rInput.value);
+      
+      const I = V / R; // Amperes
+      const P = V * I; // Watts
+
+      vVal.textContent = V.toFixed(1) + ' V';
+      rVal.textContent = Math.round(R) + ' Ω';
+      
+      // Format Current (A vs mA)
+      if (I >= 1) {
+        iVal.textContent = I.toFixed(2) + ' A';
+      } else {
+        iVal.textContent = (I * 1000).toFixed(0) + ' mA';
+      }
+
+      // Format Power (W vs mW)
+      if (P >= 1) {
+        pVal.textContent = P.toFixed(2) + ' W';
+      } else {
+        pVal.textContent = (P * 1000).toFixed(0) + ' mW';
+      }
+
+      return { V, R, I, P };
+    }
+
+    function drawCircuit() {
+      const { V, R, I } = updateCalculations();
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const marginX = 90;
+      const marginY = 60;
+      const width = canvas.width - 2 * marginX;
+      const height = canvas.height - 2 * marginY;
+
+      const left = marginX;
+      const right = marginX + width;
+      const top = marginY;
+      const bottom = marginY + height;
+
+      // 1. Draw Main Circuit Wire
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.rect(left, top, width, height);
+      ctx.stroke();
+
+      // 2. Draw Battery (Left Branch)
+      const batY = top + height / 2;
+      ctx.fillStyle = '#020617';
+      ctx.fillRect(left - 20, batY - 25, 40, 50); // Gap for battery symbol
+
+      // Battery Terminal Lines
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = '#0284c7'; // Positive
+      ctx.beginPath();
+      ctx.moveTo(left - 18, batY - 15);
+      ctx.lineTo(left + 18, batY - 15);
+      ctx.stroke();
+
+      ctx.lineWidth = 8;
+      ctx.strokeStyle = '#94a3b8'; // Negative
+      ctx.beginPath();
+      ctx.moveTo(left - 10, batY + 15);
+      ctx.lineTo(left + 10, batY + 15);
+      ctx.stroke();
+
+      // Battery Text
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 13px monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText(`${V.toFixed(1)}V`, left - 25, batY + 4);
+
+      // 3. Draw Resistor (Right Branch)
+      const resY = top + height / 2;
+      ctx.fillStyle = '#020617';
+      ctx.fillRect(right - 20, resY - 40, 40, 80); // Gap for resistor symbol
+
+      // Resistor Zig-Zag
+      ctx.strokeStyle = '#16a34a';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(right, resY - 40);
+      const steps = 6;
+      const stepSize = 80 / steps;
+      for (let i = 0; i <= steps; i++) {
+        const xOffset = (i % 2 === 0) ? 12 : -12;
+        ctx.lineTo(right + xOffset, (resY - 40) + i * stepSize);
+      }
+      ctx.lineTo(right, resY + 40);
+      ctx.stroke();
+
+      // Resistor Text
+      ctx.fillStyle = '#22c55e';
+      ctx.font = 'bold 13px monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText(`${Math.round(R)}Ω`, right + 25, resY + 4);
+
+      // 4. Draw Ammeter Symbol (Top Branch)
+      const ammeterX = left + width / 2;
+      ctx.fillStyle = '#020617';
+      ctx.beginPath();
+      ctx.arc(ammeterX, top, 18, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = '#facc15';
+      ctx.stroke();
+
+      ctx.fillStyle = '#facc15';
+      ctx.font = 'bold 13px monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('A', ammeterX, top);
+
+      // 5. Animate Electrons (Yellow Dots)
+      const speed = I * 20; // Electron speed scales with current
+      electronOffset = (electronOffset + speed) % 30;
+
+      if (V > 0) {
+        ctx.fillStyle = '#facc15';
+        const totalPerimeter = 2 * (width + height);
+        const dotSpacing = 25;
+
+        for (let p = electronOffset; p < totalPerimeter; p += dotSpacing) {
+          let x, y;
+          if (p < width) { // Top edge (left -> right)
+            x = left + p;
+            y = top;
+          } else if (p < width + height) { // Right edge (top -> bottom)
+            x = right;
+            y = top + (p - width);
+          } else if (p < 2 * width + height) { // Bottom edge (right -> left)
+            x = right - (p - (width + height));
+            y = bottom;
+          } else { // Left edge (bottom -> top)
+            x = left;
+            y = bottom - (p - (2 * width + height));
+          }
+
+          ctx.beginPath();
+          ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      requestAnimationFrame(drawCircuit);
+    }
+
+    // Input Event Listeners
+    vInput.addEventListener('input', updateCalculations);
+    rInput.addEventListener('input', updateCalculations);
+
+    // Initial trigger
+    drawCircuit();
+  </script>
+</body>
+</html>
